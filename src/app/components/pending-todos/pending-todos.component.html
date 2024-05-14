@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <h2 class="mt-4 mb-4">My Pending Todos</h2>
+        <table class="table" style="font-size: 18px;">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Assignee</th>
+                <th scope="col">Created Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let todo of todos">
+                <td>{{todo.title}}</td>
+                <td>{{todo.description}}</td>
+                <td>{{todo.assignee}}</td>
+                <td>{{todo.createdDate | date: 'dd-MM-yyyy hh:mm a'}}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+</div>

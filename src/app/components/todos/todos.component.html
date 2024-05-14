@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row mt-5 mb-3">
+      <form #form="ngForm" (ngSubmit)="addTodo()" class="d-flex">
+          <div class="mb-3 d-flex">
+            <label for="title" class="form-label" style="font-size: 18px;">Title:</label>
+            <input type="text" class="form-control" id="title" name="title"  [(ngModel)]="newTodo1.title" style="font-size: 18px;">
+          </div>
+          <div class="mb-3 d-flex">
+            <label for="description" class="form-label" style="font-size: 18px;">Description:</label>
+            <input name="description" type="text" class="form-control" id="description" [(ngModel)]="newTodo1.description" name="description" style="font-size: 18px;">
+          </div>
+          <div class="mb-3 d-flex">
+              <label for="assignee" class="form-label" style="font-size: 18px;">Assignee:</label>
+              <input type="text" class="form-control" id="assignee" name="assignee" [(ngModel)]="newTodo1.assignee" style="font-size: 18px;">
+            </div>
+          <button type="submit" class="but" style="font-size: 18px;">Add</button>
+        </form>
+  </div>
+  <div class="row">
+      <h1 class="mb-4">My Todos</h1>
+       
+        
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          
+
+          <ng-container matColumnDef="isCompleted">
+              <th mat-header-cell *matHeaderCellDef  style="font-size: 18px;">Completed?</th>
+              <td mat-cell *matCellDef="let todo" style="font-size: 18px; margin-left: 5px"><input class="ch-box" type="checkbox" [checked]="todo.isCompleted" (change)="onCompletedChange(todo.id,todo)"/></td>
+            </ng-container>
+
+          <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 18px;">Title</th>
+              <td mat-cell *matCellDef="let todo" [class.stroke]="todo.isCompleted" style="font-size: 18px;">{{ todo.title }}</td>
+            </ng-container>
+
+          <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 18px;">Description</th>
+              <td mat-cell *matCellDef="let todo" style="font-size: 18px;">{{ todo.description }}</td>
+            </ng-container>
+          
+            <ng-container matColumnDef="assignee">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 18px;">Assignee</th>
+              <td mat-cell *matCellDef="let todo" style="font-size: 18px;">{{ todo.assignee }}</td>
+            </ng-container>
+            
+            <ng-container matColumnDef="createdDate">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 18px;">Created Date</th>
+              <td mat-cell *matCellDef="let todo" style="font-size: 18px;">{{todo.createdDate | date: 'dd-MM-yyyy   hh:mm a'}}</td>
+            </ng-container>
+            
+            
+            
+            <ng-container matColumnDef="isDeleted">
+              <th mat-header-cell *matHeaderCellDef style="font-size: 18px;">Delete</th>
+              <td mat-cell *matCellDef="let todo"><a [routerLink]="[]" (click)="deleteTodo(todo.id)"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                  <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                </svg></a></td>
+            </ng-container>
+            
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+  </div>
+  
+</div>

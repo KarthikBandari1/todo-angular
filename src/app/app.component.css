@@ -1,0 +1,19 @@
+.nav-link.active-link {
+    border-style: solid;
+    border-bottom-width: 5px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  
+#navbarNav{
+    background-color: rgb(134, 165, 196);
+}
+
+.head{
+    font-family: roboto;
+    font-size: 20px;
+    margin: 10px;
+}

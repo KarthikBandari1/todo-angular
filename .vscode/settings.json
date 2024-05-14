@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/202dffe5-82ce-40e7-b934-6c4c58479ba0/resourceGroups/rg1/providers/Microsoft.Web/sites/KarthikTodoUI",
+    "appService.deploySubpath": "."
+}

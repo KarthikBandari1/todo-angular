@@ -1,0 +1,58 @@
+
+
+.stroke{
+    text-decoration: line-through;
+}
+
+a {
+        color: rgb(83, 83, 83); 
+        text-decoration: none;
+
+}
+      
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.ch-box{
+    height: 20px;
+    width: 20px;
+    accent-color: green;
+}
+
+.ch-box:checked {
+    background-color: #00ff88; /* Change background color when checked */
+}
+
+.filter{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+label{
+    margin-right: 15px;
+}
+
+#title, #description, #assignee{
+    margin-right: 15px;
+}
+
+.but{
+    height: 40px;
+    width: 80px;
+    background-color: rgb(134, 165, 196);
+    border-radius: 5px;
+    border-width: 0px;
+    padding: 0px;
+    font-weight: 500;
+}
+
+
+

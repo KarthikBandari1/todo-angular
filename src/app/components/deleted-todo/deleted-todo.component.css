@@ -1,0 +1,9 @@
+.butt{
+    height: 35px;
+    width: 80px;
+    background-color: rgb(134, 165, 196);
+    border-radius: 5px;
+    border-width: 0px;
+    padding: 0px;
+    font-weight: 500;
+}
